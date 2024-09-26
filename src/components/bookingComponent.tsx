@@ -1,6 +1,6 @@
 import React from 'react';
 import { CustomerBookings } from '../types/customer'; 
-import { Box, Typography,Grid,Divider,   Stack, Avatar } from '@mui/material';
+import { Box, Typography, Grid, Divider, Stack, Avatar } from '@mui/material';
 
 interface BookingListProps {
   bookings: CustomerBookings[];
@@ -11,9 +11,8 @@ const BookingList: React.FC<BookingListProps> = ({ bookings }) => {
     <div>
       {bookings.map((booking) => (
 
-      <Box sx={{ width: '100%' }}>
+      <Box key={booking.id} sx={{ width: '100%' }}>
       <Grid container spacing={2}>
-        {/* Left Section */}
         <Grid item xs={12} md={6}>
           <Box
             sx={{

@@ -10,7 +10,7 @@ const ResourceUnavailableRoot = styled('div')(
     alignItems: 'center',
     backgroundColor: theme.palette.mode === 'dark'
       ? theme.palette.neutral[900]
-      : theme.palette.light,
+      : theme.palette.neutral[900],
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',

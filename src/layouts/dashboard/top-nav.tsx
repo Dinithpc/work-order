@@ -10,6 +10,9 @@ import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
 import {
   Box,
+  List,
+  ListItemButton,
+  ListItemText,
   Stack,
   Typography,
 } from '@mui/material';
@@ -35,45 +38,45 @@ export const TopNav: FC<TopNavProps> = (props) => {
   const auth = useAuth();
   const popover = usePopover<HTMLButtonElement>();
 
-// const handleLogout = useCallback(
-//   async (): Promise<void> => {
-//     try {
-//       popover.handleClose();
+const handleLogout = useCallback(
+  async (): Promise<void> => {
+    try {
+      popover.handleClose();
 
-//       switch (auth.issuer) {
-//         case Issuer.Amplify: {
-//           await auth.signOut();
-//           break;
-//         }
+      switch (auth.issuer) {
+        case Issuer.Amplify: {
+          await auth.signOut();
+          break;
+        }
 
-//         case Issuer.Auth0: {
-//           await auth.logout();
-//           break;
-//         }
+        case Issuer.Auth0: {
+          await auth.logout();
+          break;
+        }
 
-//         case Issuer.Firebase: {
-//           await auth.signOut();
-//           break;
-//         }
+        case Issuer.Firebase: {
+          await auth.signOut();
+          break;
+        }
 
-//         case Issuer.JWT: {
-//           await auth.signOut();
-//           break;
-//         }
+        case Issuer.JWT: {
+          await auth.signOut();
+          break;
+        }
 
-//         default: {
-//           console.warn('Using an unknown Auth Issuer, did not log out');
-//         }
-//       }
+        default: {
+          console.warn('Using an unknown Auth Issuer, did not log out');
+        }
+      }
 
-//       router.push(paths.index);
-//     } catch (err) {
-//       console.error(err);
-//       toast.error('Something went wrong');
-//     }
-//   },
-//   [auth, router, popover]
-// );
+      router.push(paths.index);
+    } catch (err) {
+      console.error(err);
+      toast.error('Something went wrong');
+    }
+  },
+  [auth, router, popover]
+);
 
 
   return (
